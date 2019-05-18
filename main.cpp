@@ -21,11 +21,10 @@ using namespace std;
 
 int main(int argc, char** argv) {
   //used to generate different size of input data. Uncomment to generate new file with different data size
-  
+/*
   srand(time(NULL));
-  Sort::generateData("data1.txt",50000);
-
-
+  Sort::generateData("data1.txt",500000);
+*/
   string filePath = "";
   if(argc > 1 && argc < 3) {  //check for valid number of terminal arguments
     filePath = argv[1];
@@ -76,7 +75,7 @@ int main(int argc, char** argv) {
 
     start = std::clock(); //get processor time
     cout << "Quick Sort start time: " << start << endl;
-    qsTest.insertionSort(qsTest.unsortedlist, qsTest.size);
+    qsTest.quickSort(qsTest.unsortedlist, 0,qsTest.size);
 
     cout << "Quick Sort end time: " << std::clock() << endl;
     duration = ( std::clock() - start ) / (double) CLOCKS_PER_SEC;
